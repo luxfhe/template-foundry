@@ -7,7 +7,7 @@ import { ExampleToken, FHERC20NotAuthorized } from "../src/FHERC20.sol";
 import { FheEnabled } from "../util/FheHelper.sol";
 import { Permission, PermissionHelper } from "../util/PermissionHelper.sol";
 
-import { inEuint128, euint128 } from "@fhenixprotocol/contracts/FHE.sol";
+import { inEuint128, euint128 } from "@luxfhe/contracts/FHE.sol";
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);

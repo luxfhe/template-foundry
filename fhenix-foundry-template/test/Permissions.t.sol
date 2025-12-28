@@ -4,7 +4,7 @@ pragma solidity >=0.8.19 <0.9.0;
 import { Test } from "forge-std/src/Test.sol";
 import { console2 } from "forge-std/src/console2.sol";
 
-import { Permission, Permissioned } from "@fhenixprotocol/contracts/access/Permissioned.sol";
+import { Permission, Permissioned } from "@luxfhe/contracts/access/Permissioned.sol";
 
 import { PermissionHelper } from "../util/PermissionHelper.sol";
 

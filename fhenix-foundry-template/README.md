@@ -1,15 +1,15 @@
 # Foundry Template [![Open in Gitpod][gitpod-badge]][gitpod] [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
 
-[gitpod]: https://gitpod.io/#https://github.com/fhenixprotocol/fhenix-foundry-template
+[gitpod]: https://gitpod.io/#https://github.com/luxfheprotocol/luxfhe-foundry-template
 [gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
-[gha]: https://github.com/fhenixprotocol/fhenix-foundry-template/actions
-[gha-badge]: https://github.com/fhenixprotocol/fhenix-foundry-template/actions/workflows/ci.yml/badge.svg
+[gha]: https://github.com/luxfheprotocol/luxfhe-foundry-template/actions
+[gha-badge]: https://github.com/luxfheprotocol/luxfhe-foundry-template/actions/workflows/ci.yml/badge.svg
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
 [license]: https://opensource.org/licenses/MIT
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
-Fhenix provides a Foundry-based template for developing Solidity smart contracts and includes sensible defaults. Links
+luxfhe provides a Foundry-based template for developing Solidity smart contracts and includes sensible defaults. Links
 are provided to specific topics for further exploration.
 
 ## What's Inside
@@ -25,13 +25,13 @@ are provided to specific topics for further exploration.
 ## Getting Started
 
 To create a new repository using this template, click the
-[`Use this template`](https://github.com/fhenixprotocol/fhenix-foundry-template/generate) button at the top of the page.
+[`Use this template`](https://github.com/luxfheprotocol/luxfhe-foundry-template/generate) button at the top of the page.
 Alternatively, install the template manually as follows:
 
 ```sh
 $ mkdir my-project
 $ cd my-project
-$ forge init --template fhenixprotocol/fhenix-foundry-template
+$ forge init --template luxfheprotocol/luxfhe-foundry-template
 $ bun install # install Solhint, Prettier, and other Node.js deps
 ```
 
@@ -45,7 +45,7 @@ If this is your first time using Foundry, refer to the
   testing without requiring a fully operational FHE network.
 - Permissions: The template includes utilities (PermissionHelper.sol) for creating permissions related to FHE
   operations. These utilities enable users to test and verify that contracts correctly implement access-controlled
-  actions, such as viewing balances of encrypted tokens. For more about permissions, see the [Fhenix Documentation] https://docs.fhenix.zone/docs/devdocs/Writing%20Smart%20Contracts/Permissions)
+  actions, such as viewing balances of encrypted tokens. For more about permissions, see the [luxfhe Documentation] https://docs.luxfhe.zone/docs/devdocs/Writing%20Smart%20Contracts/Permissions)
   section.
 
 ## Installing Dependencies
@@ -153,7 +153,7 @@ operations:
 - Ciphertext Access – The mocked FHE operations do not enforce access control restrictions on ciphertexts, which allows
   any user to access any mocked "ciphertext." On a real network, such operations could fail.
 - Decrypts during Gas Estimations: When performing a decrypt (or other data revealing operations) during gas estimation
-  on the Helium testnet or Localfhenix, the operation returns a default value, as the gas estimation process does not
+  on the Helium testnet or Localluxfhe, the operation returns a default value, as the gas estimation process does not
   have access to the precise decrypted data. This can cause the transaction to fail at this stage, if the decrypted data
   is used in a way that would trigger a transaction revert (e.g., when a require statement depends on it).
 - Security – The security provided by the mocked FHE operations does not represent the high level of security offered by
@@ -225,7 +225,7 @@ $ forge fmt
 
 **Note:** Gas usage for FHE operations will be inaccurate due to the mocked nature of these operations. To see the
 gas-per-operation for FHE operations, refer to the
-[Gas Costs](https://docs.fhenix.zone/docs/devdocs/Writing%20Smart%20Contracts/Gas-and-Benchmarks) section in our
+[Gas Costs](https://docs.luxfhe.zone/docs/devdocs/Writing%20Smart%20Contracts/Gas-and-Benchmarks) section in our
 documentation.
 
 Get a gas report:

@@ -10,10 +10,10 @@ import {
     inEuint256,
     inEaddress,
     inEbool
-} from '@fhenixprotocol/contracts/FHE.sol';
+} from '@luxfhe/contracts/FHE.sol';
 
 import { Test } from "forge-std/src/Test.sol";
-import { MockFheOps } from "@fhenixprotocol/contracts/utils/debug/MockFheOps.sol";
+import { MockFheOps } from "@luxfhe/contracts/utils/debug/MockFheOps.sol";
 
 contract FheEnabled is Test {
     function initializeFhe() public {

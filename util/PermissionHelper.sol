@@ -2,7 +2,7 @@
 pragma solidity >=0.8.19 <0.9.0;
 import { Test } from "forge-std/src/Test.sol";
 
-import { Permission } from "@fhenixprotocol/contracts/access/Permissioned.sol";
+import { Permission } from "@luxfhe/contracts/access/Permissioned.sol";
 import { MessageHashUtils } from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 
 contract PermissionHelper is Test {
@@ -17,7 +17,7 @@ contract PermissionHelper is Test {
 
     constructor(address as_signer) {
         _signer_contract = as_signer;
-        _hashedName = keccak256(bytes("Fhenix Permission"));
+        _hashedName = keccak256(bytes("LuxFHE Permission"));
         _hashedVersion = keccak256(bytes("1.0"));
     }
 

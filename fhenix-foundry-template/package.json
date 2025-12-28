@@ -1,13 +1,13 @@
 {
-  "name": "@fhenixprotocol/fhenix-foundry-template",
-  "description": "Foundry-based template for developing FHE Solidity smart contracts with Fhenix",
+  "name": "@luxfhe/luxfhe-foundry-template",
+  "description": "Foundry-based template for developing FHE Solidity smart contracts with luxfhe",
   "version": "1.1.0",
   "author": {
-    "name": "Fhenix Protocol",
-    "url": "https://github.com/fhenixprotocol"
+    "name": "luxfhe Protocol",
+    "url": "https://github.com/luxfhe"
   },
   "dependencies": {
-    "@fhenixprotocol/contracts": "0.3.1",
+    "@luxfhe/contracts": "0.3.1",
     "@openzeppelin/contracts": "^5.0.1"
   },
   "devDependencies": {
