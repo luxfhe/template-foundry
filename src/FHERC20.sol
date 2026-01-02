@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import { FHERC20 } from "@luxfhe/contracts/experimental/token/FHERC20/FHERC20.sol";
-import { inEuint128 } from "@luxfhe/contracts/FHE.sol";
+import { Euint128 } from "@luxfhe/contracts/FHE.sol";
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
 error FHERC20NotAuthorized();
@@ -19,7 +19,7 @@ contract ExampleToken is FHERC20, AccessControl {
         _mint(msg.sender, initialBalance);
     }
 
-    function mintEncrypted(address recipient, inEuint128 memory amount) public {
+    function mintEncrypted(address recipient, Euint128 memory amount) public {
         if (hasRole(MINTER_ROLE, msg.sender)) {
             _mintEncrypted(recipient, amount);
         } else {

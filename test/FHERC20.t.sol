@@ -7,7 +7,7 @@ import { ExampleToken, FHERC20NotAuthorized } from "../src/FHERC20.sol";
 import { FheEnabled } from "../util/FheHelper.sol";
 import { Permission, PermissionHelper } from "../util/PermissionHelper.sol";
 
-import { inEuint128, euint128 } from "@luxfhe/contracts/FHE.sol";
+import { Euint128, euint128 } from "@luxfhe/contracts/FHE.sol";
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
@@ -64,7 +64,7 @@ contract TokenTest is Test, FheEnabled {
     // @dev Failing test for mintEncrypted function with unauthorized minter
     function testMintEncryptedNoPermissions() public {
         uint128 value = 50;
-        inEuint128 memory inputValue = encrypt128(value);
+        Euint128 memory inputValue = encrypt128(value);
 
         vm.expectRevert(FHERC20NotAuthorized.selector);
         token.mintEncrypted(owner, inputValue);
@@ -73,7 +73,7 @@ contract TokenTest is Test, FheEnabled {
     // @dev Test mintEncrypted function with authorized minter
     function testMintEncrypted() public {
         uint128 value = 50;
-        inEuint128 memory encryptedValue = encrypt128(value);
+        Euint128 memory encryptedValue = encrypt128(value);
 
         vm.prank(owner);
         token.mintEncrypted(owner, encryptedValue);
@@ -86,7 +86,7 @@ contract TokenTest is Test, FheEnabled {
     // @dev Test transferEncrypted function - tests reading and writing encrypted balances and using permissions
     function testTransferEncrypted() public {
         uint128 value = 50;
-        inEuint128 memory encryptedValue = encrypt128(value);
+        Euint128 memory encryptedValue = encrypt128(value);
 
         vm.startBroadcast(owner);
 
@@ -98,7 +98,7 @@ contract TokenTest is Test, FheEnabled {
 
         uint128 transferValue = 10;
 
-        inEuint128 memory encryptedTransferValue = encrypt128(transferValue);
+        Euint128 memory encryptedTransferValue = encrypt128(transferValue);
         euint128 transferred = token.transferEncrypted(receiver, encryptedTransferValue);
         assertEq(transferred.decrypt(), transferValue);
 
