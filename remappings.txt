@@ -1,3 +1,3 @@
 @openzeppelin/contracts/=node_modules/@openzeppelin/contracts/
 forge-std/=node_modules/forge-std/
-@fhenixprotocol/contracts/=node_modules/@fhenixprotocol/contracts/
+@luxfheprotocol/contracts/=node_modules/@luxfheprotocol/contracts/
